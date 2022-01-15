@@ -79,8 +79,8 @@ public class Solution {
 
             // compute the optimal cost for every other entry within a row (once a row is complete, every entry contains its optimal traversal cost)
             for (int j=1; j < graph.get(i).size(); ++j) {
-               int above =  optPaths[i - 1][j] + graph.get(i).get(j);
-               int left   = optPaths[i][j - 1] + graph.get(i).get(j);
+               int above = optPaths[i - 1][j] + graph.get(i).get(j);
+               int left  = optPaths[i][j - 1] + graph.get(i).get(j);
 
                if (above < left) { // maybe we missed some optimal paths
                    optPaths[i][j] = above;
